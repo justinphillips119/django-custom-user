@@ -28,7 +28,7 @@ def signup_view(request):
         form = SignupForm(request.POST)
         if form.is_valid():
             data = form.cleaned_data
-            user = CustomUser.objects.create(
+            user = CustomUser.objects.create_user(
                 username=data.get("username"),
                 password=data.get("password"),
                 displayname=data.get("displayname"),
